@@ -29,18 +29,14 @@ function monthPrint() {
 	for (var i = 0; i < daysInMonth.length; i++) {
 		monthName = daysInMonth[i];
 		daysNumber = daysInMonth[i];
-		function countTest() {
-			for (var z = 1; z <= daysNumber.days; z++) {
-				var dayNo = z;
-				console.log(dayNo);
-			}
-		}
 		var dayTile = '<div class="month"><h2 class="month-name">' + monthName.month + '</h2><div class="day-flex">';
-		var daysOutput = '<div class="day-item">' + daysNumber.days + '</div>'
-		dayTile += daysOutput.repeat(daysNumber.days);
+		for (var z = 1; z <= daysNumber.days; z++) {
+			var dayNo = z;
+			var daysOutput = '<div class="day-item">' + dayNo + '</div>'
+			dayTile += daysOutput;
+		}
 		dayTile += '</div></div>';
 		print(dayTile);
-		countTest();
 	}
 }
 
@@ -54,9 +50,3 @@ function monthHighlight() {
 monthPrint();
 console.log(dateMonth);
 monthHighlight();
-
-
-
-
-
-
